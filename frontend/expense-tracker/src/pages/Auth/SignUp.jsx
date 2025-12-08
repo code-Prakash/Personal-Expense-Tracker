@@ -4,7 +4,7 @@ import AuthLayout from '../../components/layouts/AuthLayout'
 import { Link, useNavigate } from 'react-router-dom'
 import Input from "../../components/Inputs/input";
 import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector';
-import { UserContext } from '../../context/userContext';
+import { UserContext } from '../../context/UserContext';
 import { API_PATHS } from "../../utils/apiPaths";
 import uploadImage from '../../utils/uploadImage';
 import axiosInstance from "../../utils/axiosInstance";
