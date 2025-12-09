@@ -13,8 +13,8 @@ router.post("/upload-image", protect, upload.single("image"), (req, res) => {
   }
 
   // Use backend BASE_URL so frontend never receives localhost:8000
-  const serverURL = process.env.BASE_URL || "http://localhost:8000"; 
-  const imageUrl = `$${serverURL}/uploads/${req.file.filename}`;
+  const serverURL = process.env.BASE_URL; 
+  const imageUrl = `${serverURL}/uploads/${req.file.filename}`;
   res.status(200).json({ imageUrl });
 });
 
