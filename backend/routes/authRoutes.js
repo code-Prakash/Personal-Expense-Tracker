@@ -12,11 +12,8 @@ router.post("/upload-image", protect, upload.single("image"), (req, res) => {
     return res.status(400).json({ message: "No file uploaded" });
   }
 
-  // Use backend BASE_URL so frontend never receives localhost:8000 
-  const imageUrl = `${process.env.BASE_URL}/uploads/${req.file.filename}`;
+  const imageUrl = `${req.protocol}://${req.get("host")}/${req.file.filename}`;
   res.status(200).json({ imageUrl });
-  console.log(user.profileImageUrl)
-
 });
 
 
